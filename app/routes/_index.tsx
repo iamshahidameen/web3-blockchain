@@ -4,6 +4,7 @@ import ContactInfo from "../components/ContactInfo";
 import RecentActivities from "../components/RecentActivities";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { User, Activity } from '../types';
+import BalanceShow from "../components/BalanceShow";
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -28,7 +29,7 @@ export default function Index() {
       <Header userName={user.name} profilePicture={user.profilePicture} />
       <ContactInfo email={user.email} phone={user.phone} />
       <RecentActivities activities={activities} />
-
+<BalanceShow/>
     </div>
     
   );
