@@ -1,0 +1,41 @@
+.recent-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  .activity-date {
+    margin: 0.5rem 0;
+  }
+  
+  .activity-description {
+    margin: 0;
+    font-size: 1rem;
+  }
+ .activity--card__cover {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+ }
+
+  .activity--card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.icon-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity--card h4, .activity--card span, .activity--card p {
+    margin: 0;
+}
