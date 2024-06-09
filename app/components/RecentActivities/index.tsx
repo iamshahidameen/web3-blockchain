@@ -17,30 +17,35 @@ interface RecentActivitiesProps {
 const RecentActivities: React.FC<RecentActivitiesProps> = ({ activities }) => {
     return (
         <div className="recent-activities">
-            <h2 className='mt-4 pb-2 border-bottom'>Recent Activities</h2>
-            <div className="rounded">
-                <div className="container">
-                    <div className="row pb-5 g-3">
+            <h2 className='display-3 mb-5'>Recent Activities</h2>
+                    <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3 ">
+                   
                         {activities.map((activity, index) => (
-                            <div key={index} className="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-                                <div className="activity--card border shadow p-3 mb-5 bg-white rounded d-flex flex-row align-items-start">
-                                    <div className="icon-square bg-light text-dark flex-shrink-0 mt-1 me-3">
-                                        <FontAwesomeIcon icon={faClapperboard} />
-                                    </div>
-                                    <div className='d-flex gap-2 g-2 flex-column justify-content-between flex-grow-1'>
-                                        
-                                            <h5>{activity.title}</h5>
-                                            <span>{activity.date}</span>
-                                            <p>{activity.description}</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
+               
+
+
+
+
+
+<div key={index} className="col">
+          <div className="card shadow-sm">
+            <div className="card-header p-0">
+            <svg className="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+            <div className="card-title fs-3">{activity.title}</div>
+            </div>
+            <div className="card-body justify-between">
+              <p className="card-text">{activity.description}</p>
+              <div className="d-flex justify-content-between align-items-center">
+                <small className="text-muted">{activity.date}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                            
                         ))}
                     </div>
                 </div>
-            </div>
-        </div>
     );
 };
 

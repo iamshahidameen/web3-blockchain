@@ -1,12 +1,6 @@
-.contact-info {
-    gap: 1rem;
-  }
-  
-  .contact-item {
-    font-size: 1.25rem;
-  }
-  
-  .contact-item .fa-icon {
-    font-size: 1.5rem;
-  }
-  
+.contact-info  {
+  grid-gap: 30px;
+}
+.contact-item {
+  grid-gap: 10px;
+}

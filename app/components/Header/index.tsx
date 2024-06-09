@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ userName, profilePicture }) => {
   return (
-    <header className="d-flex align-items-center p-3  border-bottom">
+    <header className="d-flex align-items-center pb-3 mb-4 border-bottom">
       <img
         src={profilePicture}
         alt={`${userName}'s profile`}

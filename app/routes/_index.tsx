@@ -5,6 +5,8 @@ import RecentActivities from "../components/RecentActivities";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { User, Activity } from '../types';
 import BalanceShow from "../components/BalanceShow";
+import '../components/global.css';
+
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -25,10 +27,19 @@ const activities: Activity[] = [
 ];
 export default function Index() {
   return (
-      <div className="col-lg-8 mx-auto p-3 py-md-5">
+    <div className="container py-4">
+
+    
+      <div className="pb-3 mb-4 border-bottom">
       <Header userName={user.name} profilePicture={user.profilePicture} />
+      <div className="p-5 mb-4 bg-light rounded-3">
       <ContactInfo email={user.email} phone={user.phone} />
+      <BalanceShow />
+      </div>
       <RecentActivities activities={activities} />
+    
+      
+    </div>
     </div>
     
   );

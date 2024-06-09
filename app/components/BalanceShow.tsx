@@ -6,42 +6,64 @@ function BalanceShow() {
     const { data, isError, isLoading } = useBalance({
       address: '0xb2AF0048B278a459C82fDC792de0FA22784290f6',
     })
- 
+ console.log(data, 'data')
   return (
     <>
-      <div>
-        <h2>Account</h2>
-
-        <div>
-          status: {account.status}
-          <br />
-          addresses: {JSON.stringify(account.addresses)}
-          <br />
-          chainId: {account.chainId}
-        </div>
-        Balancgge: {isError ? 'There is an error' : isLoading ? 'Loading' :  data?.formatted + data?.symbol  }
-        {account.status === 'connected' && (
-          
-          <button type="button" onClick={() => disconnect()}>
-            Disconnect
-          </button>
+    <div className="row align-items-md-stretch account__details--item">
+      <div className="col-md-6">
+        <div className="h-100 p-5 text-bg-dark rounded-3">
+          <pre>
+          <h2>Account Details</h2>
+          <h6>Account Status:<span style={{textTransform:'uppercase'}}> {account.status}</span></h6>
+          <h6>Addresses: <span>{account.status === 'connected' && (
+          ` ${JSON.stringify(account.addresses)}`
+        )}</span> 
+          </h6>
+          <h6>Chain ID: <span style={{textTransform:'uppercase'}}> {account.chainId}</span></h6>
+          </pre>
+          {account.status === 'connected' && (
+          <button className="btn btn-outline-light" type="button" onClick={() => disconnect()}>Disconnet</button>
         )}
+        <div className="connect__metamask--wrapper" data-connector-length={connectors.length}>
+        {account.status === 'disconnected' && (
+          connectors.map((connector) => (
+            <button
+            className="btn btn-outline-light" data-connector-uid={connector.type} type="button"
+              key={connector.uid}
+              onClick={() => connect({ connector })}
+            >
+              {connector.name}
+            </button>
+          ))
+        )}
+        </div>
+        </div>
       </div>
-
-      <div>
-        <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button
-            key={connector.uid}
-            onClick={() => connect({ connector })}
-            type="button"
-          >
-            {connector.name}
-          </button>
-        ))}
-        <div>{status}</div>
-        <div>{error?.message}</div>
+      <div className="col-md-6">
+        <div className="h-100 p-5 bg-light border rounded-3 account__balance--column">
+          <h2>Account Balance</h2>
+          <br />
+          <h4>Ethereum: {account.status === 'disconnected' ? `Please connect MetaMask to show Balance`: isError ? 'There is an error' : isLoading ? 'Loading' :  data?.formatted + data?.symbol} </h4>
+          {account.status === 'connected' && (
+          <button className="btn btn-outline-secondary" type="button" onClick={() => disconnect()}>Disconnet</button>
+        )}
+        <div className="connect__metamask--wrapper" data-connector-length={connectors.length}>
+          {account.status === 'disconnected' && (
+          connectors.map((connector) => (
+            <button
+            className="btn btn-outline-secondary" type="button" data-connector-uid={connector.type} 
+              key={connector.uid}
+              onClick={() => connect({ connector })}
+            >
+              {connector.name}
+            </button>
+          ))
+        )}</div>
+        
+        </div>
       </div>
+    </div>
+     
     </>
   )
 }

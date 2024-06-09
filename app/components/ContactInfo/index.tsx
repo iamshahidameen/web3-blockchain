@@ -10,19 +10,24 @@ interface ContactInfoProps {
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ email, phone }) => {
   return (
-    <div>
-      <h3 className='mt-4 mb-0'>Contact Information</h3>
-      <div className="contact-info d-flex flex-column flex-md-row align-items-start container  pt-3 pb-4 mb-4">
-        <div className="contact-item d-flex align-items-start mb-2 mb-md-0 me-md-3">
-          <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-          <span>{email}</span>
-        </div>
-        <div className="contact-item d-flex align-items-center">
-          <FontAwesomeIcon icon={faPhone} className="me-2" />
-          <span>{phone}</span>
-        </div>
+    <>
+    <div className="container-fluid py-5">
+        <h1 className="display-5 fw-bold">Contact Information</h1>
+        <div className="contact-info d-flex flex-sm-column flex-md-row align-items-sm-start align-items-center mt-2">
+        <p className="contact-item d-flex align-items-center fs-4">
+          <FontAwesomeIcon icon={faEnvelope}  />
+          <a href="mailto:john.doe@example.com">{email}</a>
+        </p>
+        <p className="contact-item d-flex align-items-center fs-4">
+          <FontAwesomeIcon icon={faPhone}  />
+          <a href="tel:(123) 456-7890">{phone}</a>
+
+        </p>
       </div>
-    </div>
+        <button className="btn btn-primary btn-lg mt-4" type="button">Signup</button>
+      </div>
+     
+    </>
   );
 };
 
