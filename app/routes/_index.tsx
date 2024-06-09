@@ -25,11 +25,10 @@ const activities: Activity[] = [
 ];
 export default function Index() {
   return (
-      <div>
+      <div className="col-lg-8 mx-auto p-3 py-md-5">
       <Header userName={user.name} profilePicture={user.profilePicture} />
       <ContactInfo email={user.email} phone={user.phone} />
       <RecentActivities activities={activities} />
-<BalanceShow/>
     </div>
     
   );

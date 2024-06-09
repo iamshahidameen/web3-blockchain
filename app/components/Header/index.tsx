@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css';
 
 interface HeaderProps {
   userName: string;
@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ userName, profilePicture }) => {
   return (
-    <header className="d-flex align-items-center p-3 bg-light border-bottom">
+    <header className="d-flex align-items-center p-3  border-bottom">
       <img
         src={profilePicture}
         alt={`${userName}'s profile`}
