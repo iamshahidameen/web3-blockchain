@@ -1,6 +1,27 @@
+.profile__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+}
 .profile-picture {
     width: 100px;
     height: 100px;
     object-fit: cover;
   }
-  
+  /* Mobile screen responsive */
+  @media screen and (max-width: 500px) {
+    .profile__wrapper  {
+      grid-template-columns: repeat(1, max-content);
+  justify-content: center;
+  align-items: center;
+
+    }
+    .profile__wrapper--image {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    .profile__wrapper--name h1{
+      margin-left: 0 !important;
+    }
+  }

@@ -8,13 +8,20 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ userName, profilePicture }) => {
   return (
-    <header className="d-flex align-items-center pb-3 mb-4 border-bottom">
-      <img
+    <header className="pb-3 mb-4 border-bottom header__wrapper">
+      <div className="profile__wrapper">
+        <div className="profile__wrapper--image">
+        <img
         src={profilePicture}
         alt={`${userName}'s profile`}
         className="profile-picture rounded-circle"
       />
-      <h1 className="ms-3 fw-bold">{userName}</h1>
+        </div>
+        <div className="profile__wrapper--name">
+          <h1 className="ms-3 fw-bold">{userName}</h1>
+      </div>
+      </div>
+      
     </header>
   );
 };

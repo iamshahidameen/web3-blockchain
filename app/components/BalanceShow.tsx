@@ -4,7 +4,7 @@ function BalanceShow() {
     const { connectors, connect, status, error } = useConnect()
     const { disconnect } = useDisconnect()
     const { data, isError, isLoading } = useBalance({
-      address: '0xb2AF0048B278a459C82fDC792de0FA22784290f6',
+      address: '0x97E2bb58790FF8BDe92C189ecAFe3b7aC81a2c69',
     })
  console.log(data, 'data')
   return (
