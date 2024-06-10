@@ -21,12 +21,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-      <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-      {children}
-        </QueryClientProvider>
+       <WagmiProvider config={config}>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
         </WagmiProvider>
-        
         <ScrollRestoration />
         <Scripts />
       </body>

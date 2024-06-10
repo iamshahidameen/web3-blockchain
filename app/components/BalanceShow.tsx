@@ -43,7 +43,7 @@ function BalanceShow() {
         <div className="h-100 p-5 bg-light border rounded-3 account__balance--column">
           <h2>Account Balance</h2>
           <br />
-          <h4>Ethereum: {account.status === 'disconnected' ? `Please connect MetaMask to show Balance`: isError ? 'There is an error' : isLoading ? 'Loading' :  data?.formatted + data?.symbol} </h4>
+          <h4>Ethereum: {account.status === 'disconnected' ? `Please connect MetaMask to show Balance`: isError ? 'Error Showing your Balnace' : isLoading ? 'Loading' : account.status === 'connected'?  data?.formatted + ` ${data?.symbol}` : 'Signing In...'} </h4>
           {account.status === 'connected' && (
           <button className="btn btn-outline-secondary" type="button" onClick={() => disconnect()}>Disconnet</button>
         )}

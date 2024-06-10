@@ -10,9 +10,8 @@
   transform: translate(-50%, -50%);
   color: #eceeef;
 }
-.recent-activities .card-body{
-  min-height: 130px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
