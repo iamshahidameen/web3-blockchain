@@ -13,7 +13,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ email, phone }) => {
     <>
     <div className="container-fluid py-5">
         <h1 className="display-5 fw-bold">Contact Information</h1>
-        <div className="contact-info d-flex flex-sm-column flex-md-row align-items-sm-start align-items-center mt-2">
+        <div className="contact-info d-flex flex-column flex-md-row align-items-start align-items-md-center mt-2">
         <p className="contact-item d-flex align-items-center fs-4">
           <FontAwesomeIcon icon={faEnvelope}  />
           <a href="mailto:john.doe@example.com">{email}</a>
@@ -24,7 +24,6 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ email, phone }) => {
 
         </p>
       </div>
-        <button className="btn btn-primary btn-lg mt-4" type="button">Signup</button>
       </div>
      
     </>
